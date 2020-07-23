@@ -1,4 +1,4 @@
-NAME ?= http://843776460877.dkr.ecr.us-east-1.amazonaws.com/taskade/actions-runner
+NAME ?= 843776460877.dkr.ecr.us-east-1.amazonaws.com/taskade/actions-runner
 
 RUNNER_VERSION ?= 2.267.1
 DOCKER_VERSION ?= 19.03.8

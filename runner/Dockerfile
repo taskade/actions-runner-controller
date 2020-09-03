@@ -9,18 +9,6 @@ RUN apt update -y \
   && add-apt-repository -y ppa:git-core/ppa \
   && apt update -y \
   && apt install -y --no-install-recommends \
-     yarn \
-     xvfb \
-     libgtk2.0-0 \
-     libgtk-3-0 \
-     libgbm-dev \
-     libnotify-dev \
-     libgconf-2-4 \
-     libnss3 \
-     libxss1 \
-     libasound2 \
-     libxtst6 \
-     xauth \
      build-essential \
      curl \
      ca-certificates \
@@ -46,6 +34,7 @@ RUN apt update -y \
      wget \
      zip \
      zstd \
+  && apt update -y \
   && rm -rf /var/lib/apt/lists/*
 
 RUN curl -L -o docker.tgz https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \

@@ -9,6 +9,7 @@ RUN apt update -y \
   && add-apt-repository -y ppa:git-core/ppa \
   && apt update -y \
   && apt install -y --no-install-recommends \
+     xvfb \
      build-essential \
      curl \
      ca-certificates \

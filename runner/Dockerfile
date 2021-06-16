@@ -37,6 +37,11 @@ RUN apt update -y \
   && apt update -y \
   && rm -rf /var/lib/apt/lists/*
 
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
+  && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list \
+  && apt update -y \
+  && apt install -y --no-install-recommends yarn
+
 RUN curl -L -o docker.tgz https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \
   && tar zxvf docker.tgz \
   && install -o root -g root -m 755 docker/docker /usr/local/bin/docker \
